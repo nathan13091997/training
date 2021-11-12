@@ -31,6 +31,9 @@
     .pc {
         display: none !important;
     }
+    .border-bottom {
+        width: 100%;
+    }
 
     #menu-toggle {
         display: block;
@@ -41,6 +44,9 @@
     }
     .topbar-link {
         border : none;
+        justify-content: center;
+        align-items: center;
+        padding-right: 0;
     }
     .right {
         text-align: left;
@@ -67,9 +73,7 @@
         justify-content: center;
         align-items: center;
     }
-    .border-bottom {
-        width: 293px;
-    }
+  
     li.content-banner {
         width: 100%!important;
     }
@@ -79,11 +83,17 @@
     .list-image {
         display: none;
     }
-    
+    ul.list-blog {
+        margin: 0;
+        justify-content: center;
+    }
     ul.list-blog>li {
-        width: calc(50% - 15px)!important;
-        margin-left: 15px!important;
-        padding-right: 30px!important;
+        margin: 0;
+        width: 100%;
+        max-width: 368px;
+    }
+    ul.list-blog>li:not(:last-child) {
+        margin-bottom: 50px;
     }
     .border-bottom {
         width: 100%!important;
@@ -93,20 +103,12 @@
     .cols-lefts {
         background-color: white;
     }
-    .content-left-blogs {
-        padding-bottom: 30px!important;
-    }
+    
     .cols-rights {
         margin: 0px 0px 69px 0px;
         padding : 0;
     }
-    .content-image{
-        display: none;
-        margin-left: -70%;
-    }
-    .col-content {
-        margin:  0 auto;
-    }
+    
     .active-row-text {
         background: rgba(0, 0, 0, 0.8);
         transition: all .3s;
@@ -137,13 +139,19 @@
     }
     .nav-sp {
         position: fixed;
+        top: 0;
         left: 0;
         padding-left: 10px;
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.8);
-        visibility: visible;
         transition: all 0.3s;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .nav-sp.open {
+        visibility: visible;
+        opacity: 1;
     }
     .topbar__list .closeMenu {
         display: block;
@@ -157,10 +165,6 @@
         float: right;
         margin: 0;
     }
-    .topbar-link {
-        justify-content: center;
-        align-items: center;
-    }
     ul.topbar__list>li:not(:last-child) {
         margin-right: 0;
     }
@@ -170,9 +174,6 @@
         box-sizing: border-box;
         line-height: 1em;
         display: block;
-    }
-    img.top-nav__logo {
-        margin-bottom: -20px;
     }
     li.contact-button>a {
         border: none!important;
@@ -192,6 +193,7 @@
     }
     .col-content {
         align-items: flex-start;
+        width: 100%;
     }
     .col-content h3 {
         margin: 0 auto;
@@ -206,16 +208,7 @@
     .content-left-blogs span {
         margin-top: -10px;
     }
-    .content-left-blogs {
-        padding-bottom: 14px!important;
-    }
-    .row-b {
-        margin-left: 10px;
-    }
-    h1.right {
-        font-size: 10px;
-        margin-left: 10px;
-    }
+    
     img.nav-logo {
         display: block;
         margin-bottom: 40px;
@@ -251,7 +244,10 @@
     .carasoul {
         margin-top: 95px;
     }
-    
+    .col-image {
+        margin: 0 -15px;
+        width: calc(100% + 30px);
+    }
 }
 
 /* end screen-max:750px */
@@ -259,33 +255,6 @@
 
 
 @media screen and (max-width: 640px) {
-    .cols-rights {
-        margin: 0px -42px 69px 12px;
-        padding : 0;
-    }
-    .border-bottom {
-        width: 303px;
-    }
-    .inner {
-        padding: 0px 0px;
-    }
-    img.top-nav__logo {
-        margin-bottom: -20px;
-    }
-
-    .column img {
-        width: 320px;
-        height: 196px;
-    }
-    li.content-banner {
-        
-        margin-left: 15px;
-        padding-right: 15px;
-    }
-    .content-image {
-        margin-left: -50%;
-    }
-
     img.nav-logo {
         display: flex;
         justify-content: center;
@@ -294,12 +263,6 @@
         margin-top: 0px;
         margin-bottom: 70px;
     }
-    ul.list-blog>li {
-        width: calc(50% - 15px)!important;
-        margin-left: 0px!important;
-        padding-right: 30px!important;
-    }
-
 }
 
 /* end screen-max:640px */
@@ -307,37 +270,8 @@
 
 
 @media screen and (max-width: 560px) {
-    .border-bottom {
-        width: 248px;
-    }
-    .inner {
-        padding: 0px 0px;
-    }
     img.top-nav__logo {
         margin-bottom: -20px;
-    }
-    .column img {
-        width: 280px;
-        height: 172px;
-    }
-
-
-
-    li.content-banner {
-        
-        margin-left: 15px;
-        padding-right: 15px;
-    }
-    li.content-banner {
-        margin-bottom: 30px;
-    }
-    .content-image{
-        display: block;
-        margin-left: -40%;
-        
-    }
-    .col-content {
-        align-items: flex-start;
     }
     .col-content h3 {
         margin: 0 auto;
@@ -355,13 +289,7 @@
     .content-left-blogs {
         padding-bottom: 14px!important;
     }
-    .row-b {
-        margin-left: 10px;
-    }
-    h1.right {
-        font-size: 10px;
-        margin-left: 10px;
-    }
+    
     
 }
 
@@ -370,9 +298,7 @@
 
 
 @media screen and (max-width: 520px) {
-    .content-image {
-        margin-left: -35%;
-    }
+
 }
 
 /* end screen-max:520px */
@@ -385,7 +311,7 @@
     .event>span {
         text-align: center;
         margin: 22px 0px;
-        width: 50%;
+        width: 25%;
     }
     .border-bottom {
         width: 224px;
@@ -402,6 +328,9 @@
         right: 7%;
        
     }
+    ul.list-blog>li {
+        width: 100%!important;
+    }
     .event>p {
         font-size: 18px;
         color: #1a2542;
@@ -413,19 +342,6 @@
         display: flex;
         flex-direction: column;
     }
-
-    li.content-banner {
-        
-        margin-left: 15px;
-        padding-right: 15px;
-    }
-    li.content-banner:not(:last-child) {
-        margin-bottom: 30px;
-    }
-    .content-image{
-        display: block;
-        margin-left: -25%;
-    }
     .col-content {
         align-items: flex-start;
     }
@@ -434,23 +350,14 @@
         padding-bottom: 2px;
         margin-top: 30px;
     }
-    ul.post {
-        color: white;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
     .content-left-blogs span {
         margin-top: -10px;
     }
     .content-left-blogs {
         padding-bottom: 14px!important;
     }
-    .row-b {
-        margin-left: 10px;
-    }
-    h1.right {
-        font-size: 10px;
-        margin-left: 10px;
+    ul.list-blog {
+        margin: 0;
     }
 }
 
@@ -491,31 +398,14 @@
         font-size: 14px;
         margin-top: 20px;
     }
-    .border-bottom{
-        width : 195px;
-    }
+   
     .event {
         margin-bottom: -10px;
-    }
-    .cols-rights {
-        margin: -26px -41px 51px 12px;
     }
     section.shop-list {
         margin: -40px 12px;
     }
 
-    li.content-banner {
-        
-        margin-left: 15px;
-        padding-right: 15px;
-    }
-    li.content-banner:not(:last-child) {
-        margin-bottom: 30px;
-    }
-    .content-image{
-        display: block;
-        margin-left: -15%;
-    }
     .col-content {
         align-items: flex-start;
     }
@@ -524,23 +414,11 @@
         padding-bottom: 2px;
         margin-top: 30px;
     }
-    ul.post {
-        color: white;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
     .content-left-blogs span {
         margin-top: -10px;
     }
     .content-left-blogs {
         padding-bottom: 14px!important;
-    }
-    .row-b {
-        margin-left: 10px;
-    }
-    h1.right {
-        font-size: 10px;
-        margin-left: 10px;
     }
     .border-bottom {
         margin-top: 20px;
@@ -549,6 +427,9 @@
         font-size: 14px;
         margin-top: -32px;
     }
+    
+    
+    
 
 /* end screen-max:425px */
 
@@ -560,11 +441,8 @@
     }
     .border-bottom {
         margin-top: 15px;
-        width: 348px;
     }
-    ul.list-blog {
-        margin-right: 0px!important;
-    }
+    
     .event {
         position: relative;
     }
@@ -574,24 +452,9 @@
         left: 0%;
         margin-left: 0;
     }
-    ul.list-blog {
-        margin-right: 34px;
-    }
     .event>span {
         padding: 4px 20px;
         font-weight: 300;
-    }
-    li.content-banner {
-        
-        margin-left: 15px;
-        padding-right: 15px;
-    }
-    li.content-banner:not(:last-child) {
-        margin-bottom: 30px;
-    }
-    .content-image{
-        display: block;
-        margin-left: -5%;
     }
     .col-content {
         align-items: flex-start;
@@ -601,73 +464,24 @@
         padding-bottom: 2px;
         margin-top: 30px;
     }
-    ul.post {
-        color: white;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
     .content-left-blogs span {
         margin-top: -10px;
     }
     .content-left-blogs {
         padding-bottom: 14px!important;
     }
-    .row-b {
-        margin-left: 10px;
-    }
-    h1.right {
-        font-size: 10px;
-        margin-left: 10px;
-    }
 
     li.content-banner>img {
-       
         right: 8%;
-       
     }
 }
 
 /* end screen-max:375px */
 
 
-
 @media screen and (max-width: 320px) {
-    .column img {
-        width: 160px;
-        height: 98px;
-    }
     p.alt {
         font-size: 5vw;
-    }
-    ul.list-blog {
-        width: 80%;
-    }
-    .col-content-blog {
-        margin-left: 40px;     
-    }
-    .border-bottom {
-        width: 290px;
-    }
-    .cols-rights {
-        margin: -26px -41px 51px -26px;
-    }
-    li.content-banner {  
-        margin-left: 15px;
-        padding-right: 15px;
-    }
-    li.content-banner:not(:last-child) {
-        margin-bottom: 30px;
-    }
-    .row-b {
-        margin-left: 10px;
-    }
-    h1.right {
-        font-size: 10px;
-        margin-left: 10px;
-    }
-    .content-image{
-        display: block;
-        margin-left : 2%;
     }
     .col-content {
         align-items: flex-start;
@@ -677,27 +491,11 @@
         padding-bottom: 2px;
         margin-top: 30px;
     }
-    ul.post {
-        color: white;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
     .content-left-blogs span {
         margin-top: -10px;
     }
     .content-left-blogs {
         padding-bottom: 14px!important;
-    }
-    li.content-banner>img {      
-        right: 8%;   
-    }
-    
-    ul.list-blog>li {
-        width: 100%!important;
-    }
-    ul.list-blog {
-        width: 100%;
-        padding-right: 15px;
     }
 }
 

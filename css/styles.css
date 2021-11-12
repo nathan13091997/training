@@ -402,10 +402,9 @@ h3.title {
 ul.post {
     color: white;
 }
-ul.post>li:not(:first-child){
-    margin-bottom: -10px;  
+ul.post li:not(:last-child) {
+    margin-bottom: 10px;
 }
-
 ul.post>li>span.date>p.post {
     font-size: 12px;
     letter-spacing: 0.1rem; 
@@ -418,6 +417,7 @@ span.date>p.day {
     font-size: 12px;
     margin-top: 0px;
     font-weight: 100;
+    margin-bottom: 0;
 }
 p.alt{
     color: white;
@@ -643,8 +643,8 @@ ul.list-blog {
     flex-wrap: wrap;
 }
 ul.list-blog>li {
-    margin-left: 67px;
-    width: calc(50% - 67px);
+    margin-left: 60px;
+    width: calc(50% - 60px);
 }
 ul.list-blog>li>a {
     text-decoration: none;

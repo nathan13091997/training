@@ -61,19 +61,16 @@ $(document).ready(function() {
 const mainMenu = document.querySelector('.topbar__list');
 const closeMenu = document.querySelector('.closeMenu');
 const openMenu = document.querySelector('.openMenu');
-const column = document.querySelector('.col')
-const textRow = document.querySelector('.row-text');
+const column = document.querySelector('.nav-sp')
 
 
 openMenu.addEventListener('click',show);
 closeMenu.addEventListener('click',close);
 function show(){
     mainMenu.classList.add('open');
-    column.classList.add('nav-sp');  
-    textRow.classList.add('active-row-text')
+    column.classList.add('open');  
 }
 function close(){
     mainMenu.classList.remove('open');
-    column.classList.remove('nav-sp'); 
-    textRow.classList.remove('active-row-text')
+    column.classList.remove('open'); 
 }
